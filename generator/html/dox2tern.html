@@ -1,0 +1,19 @@
+<html>
+
+<head>
+<title>Mongoose 2 Tern</title>
+<script type="text/javascript" src="../data/api.json.js"></script>
+<script type="text/javascript" src="../dox2tern.js"></script>
+<script type="text/javascript" src="../dox2tern_mongoose.js"></script>
+<script type="text/javascript">
+  function generateTernDef() {
+    var ternDef = dox2tern.Mongoose.generate(api);
+    document.getElementById('ternDef').value = JSON.stringify(ternDef, null,
+        ' ');
+  }
+</script>
+</head>
+<body onload="generateTernDef();">
+	<textarea id="ternDef" style="width: 100%; height: 100%"></textarea>
+</body>
+</html>
