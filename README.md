@@ -1,22 +1,94 @@
-tern-node-mongoose
-==================
+# tern-node-mongoose
 
-tern-node-mongoose
+[![Build Status](https://secure.travis-ci.org/angelozerr/tern-node-mongoose.png)](http://travis-ci.org/angelozerr/tern-node-mongoose)
 
-## Generator
+[tern-node-mongoose](https://github.com/angelozerr/tern-node-mongoose) is a plugin which adds support for [Mongoose](http://mongoosejs.com/) to the JavaSript code intelligence system [Tern](http://ternjs.net/).
 
-npm install
+## Demo
 
-Generate `generator/data/api.json` from JS sources with dox : 
+You can see demo with CodeMirror (inside Web Browser) [demos/mongoose.html](https://github.com/angelozerr/tern-node-mongoose/blob/master/demos/mongoose.html) :
 
- * edit generator\data\node\js2api_mongoose.js
+![CodeMirror & TernNodeMongoose](https://github.com/angelozerr/tern-node-mongoose/wiki/images/CodeMirror_TernNodeMongooseCompletions.png)
+
+If you wish to use Eclipse as IDE, see https://github.com/angelozerr/tern.java
+
+## Installation
+
+tern-node-mongoose works with the NodeJS [Tern Server][tern-server], and within a browser.
+
+The easiest way to install tern-node-mongoose is to use a recent version of
+[npm][npm]. In the directory where you installed the [tern package][tern-npm],
+simply run
+
+```
+$ npm install tern-node-mongoose
+```
+
+## Configuration
+
+`mongoose` tern plugin extends `node` tern plugin to support mongoose.
+
+### With Node.js
+
+In order for Tern to load the tern-node-mongoose plugin once it is installed, you must
+include `node-mongoose` in the `plugins` section of your [Tern configuration
+file][tern-config] and `node`.
+
+Here is a minimal example `.tern-project` configuration file:
+
+```json
+{
+  "plugins": {
+    "node": {},
+    "node-mongoose": {}
+  }
+}
+```
+
+### With WebBrowser (CodeMirror)
+
+See [demos/mongoose.html](https://github.com/angelozerr/tern-node-mongoose/blob/master/demos/mongoose.html)
+## How to generate node-mongoose.js?
+
+### Introduction
+
+The tern plugin [node-mongoose.js](https://github.com/angelozerr/tern-node-mongoose/blob/master/node-mongoose.js) is generated from the JavaScript sources of [Mongo DB Native NodeJS Driver](http://mongodb.github.io/node-mongoose/).
+Process of this generation is : 
+
+ * generate a JSON Representation (api.json) of JavaScript sources of [Mongo DB Native NodeJS Driver](http://mongodb.github.io/node-mongoose/) by using [dox](https://github.com/visionmedia/dox).
+ * generate a JSON Type Definition from the generated dox JSON Representation.
+ * generate the tern plugin by using the generated JSON Type Definition.
  
- var basedir = "D:/_Projects/git/mongoose/"
- 
-  * cmd
+### Instruction 
+
+Here the steps : 
   
-`node generator/data/node/js2api_mongoose`
-
- * Generate `node-mongodb-native.js` from api.json : 
+* open cmd  
+* `cd $HOME/tern-node-mongoose`
+* `npm install` (to install dox)
+* Generate **generator/data/api.json** from JS sources with dox : 
+  
+  * edit generator/data/node/js2api_mongodb.js with the path of the [node-mongoose](https://github.com/mongodb/node-mongoose) :
  
-`node generator/node/make_plugin`
+ 	`var basedir = "D:/_Projects/git/node-mongoose/"`
+ 
+  * launch the following command to generate **generator/data/api.json** :
+  
+	`node generator/data/node/js2api_mongodb`
+
+* Generate the tern plugin **node-mongoose.js** from api.json, by launching :
+ 
+	`node generator/node/make_plugin`
+
+### Advanced informations
+
+JS sources are sometimes NOT well annotated, so it misses some information (some return function, parameter type, etc). The [generator/dox2tern_mongodb.js](generator/dox2tern_mongodb.js) gives the capability to override information of JS sources.
+
+If you wish to work on the dox JSON Representation (api.json) to tern JSON Type Definition, you can open the HTML page [generator/html/dox2tern.html](generator/html/dox2tern.html)
+
+## Structure
+
+The basic structure of the project is given in the following way:
+
+* `node-mongoose.js` the tern plugin.
+* `demos/` demos with node-mongoose tern plugin which use CodeMirror.
