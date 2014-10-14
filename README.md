@@ -26,7 +26,7 @@ $ npm install tern-node-mongoose
 
 ## Configuration
 
-`mongoose` tern plugin extends `node` tern plugin to support mongoose.
+`node-mongoose` tern plugin extends `node` tern plugin to support mongoose.
 
 ### With Node.js
 
@@ -91,4 +91,4 @@ If you wish to work on the dox JSON Representation (api.json) to tern JSON Type 
 The basic structure of the project is given in the following way:
 
 * `node-mongoose.js` the tern plugin.
-* `demos/` demos with node-mongoose tern plugin which use CodeMirror.
+* `demos/` demos with `node-mongoose` tern plugin which use CodeMirror.
