@@ -52,10 +52,10 @@ See [demos/mongoose.html](https://github.com/angelozerr/tern-node-mongoose/blob/
 
 ### Introduction
 
-The tern plugin [node-mongoose.js](https://github.com/angelozerr/tern-node-mongoose/blob/master/node-mongoose.js) is generated from the JavaScript sources of [Mongo DB Native NodeJS Driver](http://mongodb.github.io/node-mongoose/).
+The tern plugin [node-mongoose.js](https://github.com/angelozerr/tern-node-mongoose/blob/master/node-mongoose.js) is generated from the JavaScript sources of [Mongoose](http://mongoosejs.com/).
 Process of this generation is : 
 
- * generate a JSON Representation (api.json) of JavaScript sources of [Mongo DB Native NodeJS Driver](http://mongodb.github.io/node-mongoose/) by using [dox](https://github.com/visionmedia/dox).
+ * generate a JSON Representation (api.json) of JavaScript sources of [Mongoose](http://mongoosejs.com/) by using [dox](https://github.com/visionmedia/dox).
  * generate a JSON Type Definition from the generated dox JSON Representation.
  * generate the tern plugin by using the generated JSON Type Definition.
  
