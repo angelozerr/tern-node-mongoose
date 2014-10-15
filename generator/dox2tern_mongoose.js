@@ -29,6 +29,12 @@
     if (entry.ctx != null  && entry.ctx.type == 'function') return true;
   }
   
+  var overrideDef = {
+      "Mongoose" : {
+        
+      }
+  }
+  
   var getType = function(moduleName, className, methodName, staticMethod) {
     switch(className) {
     case 'Mongoose':
@@ -38,10 +44,23 @@
         // type for Mongoose methods
         switch(methodName) {
         case 'model':
-          return "fn(name: string, schema?: +schema.Schema, collection?: string, skipInit?: bool)  -> +model.Model";
+          return "fn(name: string, schema?: +schema.Schema, collection?: string, skipInit?: bool) -> model.Model";
         }
       }
       break;     
+    case 'Model':
+      if (!methodName) {
+      }
+      else {
+        // type for Model methods
+        switch(methodName) {
+        case 'save':
+          return "fn(fn?: fn(err: +Error, product: +model.Model, numberAffected: number))";
+        case 'remove':
+          return "fn(conditions: +Object, callback?: fn(err: +Error))";
+        }
+      }
+      break;           
     case 'Db':
       
       break;
