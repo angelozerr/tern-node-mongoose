@@ -86,6 +86,8 @@ JS sources are sometimes NOT well annotated, so it misses some information (some
 
 If you wish to work on the dox JSON Representation (api.json) to tern JSON Type Definition, you can open the HTML page [generator/html/dox2tern.html](generator/html/dox2tern.html)
 
+See [Contributing](https://github.com/angelozerr/tern-node-mongoose/wiki/Contributing) for more information
+
 ## Structure
 
 The basic structure of the project is given in the following way:
