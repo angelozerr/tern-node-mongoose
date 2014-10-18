@@ -10,7 +10,7 @@ You can see demo with CodeMirror (inside Web Browser) [demos/mongoose.html](http
 
 ![CodeMirror & TernNodeMongoose](https://github.com/angelozerr/tern-node-mongoose/wiki/images/CodeMirror_TernNodeMongooseCompletions.png)
 
-If you wish to use Eclipse as IDE, see https://github.com/angelozerr/tern.java
+If you wish to use Eclipse as IDE, see Eclipse support for [Node Mongoose](https://github.com/angelozerr/tern.java/wiki/Tern-&-Node-Mongoose-support).
 
 ## Installation
 
