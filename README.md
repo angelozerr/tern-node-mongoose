@@ -1,6 +1,7 @@
 # tern-node-mongoose
 
 [![Build Status](https://secure.travis-ci.org/angelozerr/tern-node-mongoose.png)](http://travis-ci.org/angelozerr/tern-node-mongoose)
+[![npm version](https://badge.fury.io/js/tern-node-mongoose.svg)](http://badge.fury.io/js/tern-node-mongoose)
 
 [tern-node-mongoose](https://github.com/angelozerr/tern-node-mongoose) is a tern plugin which adds support for [Mongoose](http://mongoosejs.com/) to the JavaScript code intelligence system [Tern](http://ternjs.net/).
 
