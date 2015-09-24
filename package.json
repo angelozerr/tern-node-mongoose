@@ -10,8 +10,7 @@
     "url": "git://github.com/angelozerr/tern-node-mongoose.git"
   },
   "dependencies": {
-    "tern": ">=0.10.0",
-    "acorn": ">=1.0.0"    
+    "tern": "^0.16.0"
   },  
   "devDependencies": { 
   	"dox": "0.4.4" 
