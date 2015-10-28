@@ -39,6 +39,7 @@ Here is a minimal example `.tern-project` configuration file:
 
 ```json
 {
+  "ecmaVersion": 5,
   "plugins": {
     "node": {},
     "node-mongoose": {}
